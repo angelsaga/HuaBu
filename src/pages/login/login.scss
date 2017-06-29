@@ -1,0 +1,15 @@
+page-login {
+
+    ion-content{
+        background-image: url('../assets/img/backgroud.png');
+    }
+
+    .vertical-align-content > *
+    {
+        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+    }
+    a {color: inherit;}
+
+}

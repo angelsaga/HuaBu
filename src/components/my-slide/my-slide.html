@@ -1,0 +1,7 @@
+<ion-slides>
+  <ion-slide *ngFor="let slide of slides_list; let i = index;">
+    <div (click)="onClick(i)">
+      <span class="slide-title-inactive"  [ngClass]="{'slide-title-active': selectedIndex == i}">{{slide}}</span>
+    </div>
+  </ion-slide>
+</ion-slides>

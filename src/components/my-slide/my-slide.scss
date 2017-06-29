@@ -1,0 +1,14 @@
+$slide-height-small: 10px;
+
+.slide-title-inactive {
+  padding-bottom: 10px;
+  font-size: 14px;
+  height: $slide-height-small;
+  line-height: $slide-height-small;
+  color: #666666;
+
+}
+
+.slide-title-active {
+  color: #f4f4f4;
+}
