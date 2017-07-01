@@ -2,5 +2,14 @@ page-profile {
     .toolbar-background {
             background: $toolbar-background;
         }
+    .toolbar-title{
+        font-size: $nav-title-size-active;
+        color: $nav-title-color-active;
+    }
+
+    .card-num{
+        font-size: 2rem;
+        color: red;
+    }         
 
 }

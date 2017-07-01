@@ -28,16 +28,16 @@
               {{homeActivity.title}}
             </ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col col-5>
-              <ion-icon name="heart" class="icon-style" *ngIf="homeActivity.liked">
+          <ion-row class="icon-style">
+            <ion-col col-5 text-left>
+              <ion-icon name="heart" *ngIf="homeActivity.liked">
                 {{homeActivity.user_fans_count}}
               </ion-icon>
-              <ion-icon name="heart-outline" class="icon-style" *ngIf="! homeActivity.liked">
+              <ion-icon name="heart-outline" *ngIf="! homeActivity.liked">
                 {{homeActivity.user_fans_count}}
               </ion-icon>
             </ion-col>
-            <ion-col col-5 class="icon-style">
+            <ion-col col-5 text-right>
               {{homeActivity.created | date:"yyyy/MM/dd h:mma"}}
             </ion-col>
           </ion-row>

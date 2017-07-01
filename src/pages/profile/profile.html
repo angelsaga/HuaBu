@@ -25,22 +25,44 @@
         </ion-col>
         <ion-col col-3>
           <button right ion-button small color="dark" (click)="logout($event)">注销</button>
-
         </ion-col>
       </ion-row>
     </ion-item>
     <ion-item>
-      <ion-row>
-        <ion-col col-9>
-          <ion-avatar item-start>
-            {{username}}
-          </ion-avatar>
-        </ion-col>
-        <ion-col col-3>
-          <button right ion-button small color="dark" (click)="logout($event)">注销</button>
-
-        </ion-col>
-      </ion-row>
+      <ion-card>
+        <ion-card-content>
+          <ion-row>
+            <ion-col col-4 text-center>
+              <ion-row>
+                <ion-col col-12 text-center class="card-num">
+                  0
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-12 text-center>
+                  我的关注
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2 text-center border-right>
+            </ion-col>
+            <ion-col col-2 text-center>
+            </ion-col>
+            <ion-col col-4 text-center>
+              <ion-row>
+                <ion-col col-12 text-center class="card-num">
+                  0
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-12 text-center>
+                  我的订单
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
     </ion-item>
   </ion-list>
 

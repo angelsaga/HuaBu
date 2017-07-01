@@ -13,11 +13,39 @@
 $text-color:        #000;
 $background-color:  #fff;
 
+//self defined
+$nav-title-color-active: #fff;
+$nav-title-size-active: 1.4rem;
+$nav-title-color-inactive: #666666;
+$nav-title-size-inactive: 1rem;
 $toolbar-background: #000;
+
+//overwrite
 $toolbar-background: $toolbar-background;
 $tabs-background: $toolbar-background;
 $tabs-tab-color-active : #fff;
 $tabs-tab-color-inactive : #fff;
+
+$tabs-md-tab-icon-size-active: 3rem;
+$tabs-md-tab-icon-color-active: #fff;
+$tabs-md-tab-text-size-active: 3rem;
+$tabs-md-tab-text-color-active: #fff;
+
+$tabs-md-tab-icon-size: 2rem;
+$tabs-md-tab-icon-color: #888888;
+$tabs-md-tab-text-size: 2rem;
+$tabs-md-tab-text-color: #888888;
+
+$tabs-ios-tab-icon-size-active: 3rem;
+$tabs-ios-tab-icon-color-active: #fff;
+$tabs-ios-tab-text-size-active: 3rem;
+$tabs-ios-tab-text-color-active: #fff;
+
+$tabs-ios-tab-icon-size: 2rem;
+$tabs-ios-tab-icon-color: #888888;
+$tabs-ios-tab-text-size: 2rem;
+$tabs-ios-tab-text-color: #888888;
+
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
