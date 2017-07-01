@@ -113,8 +113,11 @@ export class HomePage {
   }
 
   enterPage(event, id) {
-    //this.navCtrl.push(SearchPage, {id: id});
-    this.app.getRootNav().push(SearchPage, { id: id });
+    //this.navCtrl.push(SearchPage, {id: id}, { animate: true, animation: 'transition', duration: 500, direction: 'forward' });
+    //console.log(this.app.getRootNav());
+    //this.app.getRootNav().push(SearchPage, { id: id });
+    this.app.getRootNav().push(SearchPage, { id: id },
+      { animate: true, animation: 'transition', duration: 600, direction: 'forward' });
   }
 }
 

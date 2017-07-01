@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 // import { ViewController } from 'ionic-angular'
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, Navbar, LoadingController } from 'ionic-angular';
 import { NetService } from "./../../providers/NetService";
 
 @Component({
@@ -10,6 +10,8 @@ import { NetService } from "./../../providers/NetService";
 })
 
 export class SearchPage {
+  @ViewChild(Navbar) navBar: Navbar;
+
   loading;
   ActivitieDetail;
   constructor(
@@ -17,10 +19,13 @@ export class SearchPage {
     public navParams: NavParams,
     private loadCtrl: LoadingController,
     private netSer: NetService, ) {
-
   }
 
   ngOnInit() {
+    this.navBar.backButtonClick = (e: UIEvent) => {
+      this.navCtrl.pop(
+        { animate: true, animation: 'transition', duration: 500, direction: 'back' });
+    }
     this.getActivityDetial(this.navParams.data.id);
   }
 
@@ -67,7 +72,8 @@ export class SearchPage {
   }
 
   closePage() {
-    //  this.viewCtrl.dismiss();
-    this.navCtrl.pop();
+    //this.navCtrl.pop();
+    this.navCtrl.popToRoot(
+      { animate: true, animation: 'transition', duration: 200, direction: 'back' });
   }
 }

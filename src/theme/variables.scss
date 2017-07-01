@@ -13,7 +13,11 @@
 $text-color:        #000;
 $background-color:  #fff;
 
-
+$toolbar-background: #000;
+$toolbar-background: $toolbar-background;
+$tabs-background: $toolbar-background;
+$tabs-tab-color-active : #fff;
+$tabs-tab-color-inactive : #fff;
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.

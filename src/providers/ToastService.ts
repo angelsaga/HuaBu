@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 export class ToastService {
   constructor(public toastCtrl: ToastController) {}
 
-  public showToast(msg: string){
+  public showToast(msg: string, duration=3000){
         let toast = this.toastCtrl.create({
           message: msg,
-          duration: 3000,
+          duration: duration,
           position: 'top',
           showCloseButton: true,
           closeButtonText: '关闭'

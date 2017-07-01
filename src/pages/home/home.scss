@@ -1,14 +1,14 @@
 home-page {
   //头部背景颜色
   .toolbar-background {
-    background: black;
+    background: $toolbar-background;
 
   }
 
 
 .icon-style {
       color: gray;
-      font-size: 10px;
+      font-size: 1rem;
     }
 
   /*

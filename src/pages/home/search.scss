@@ -1,6 +1,6 @@
 page-search {
     .toolbar-background {
-        background: black;
+        background: $toolbar-background;
     }
 
     .h2 {      
@@ -15,7 +15,10 @@ page-search {
         color: red;
     }
 
-
+    .customIcon {
+        font-size: 1.7em;
+        color: white;
+    }
 
 
 }

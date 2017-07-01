@@ -7,13 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>个人信息 - {{username}}</ion-title>
-    
+    <ion-title>个人信息</ion-title>
+
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <button ion-button small color="dark"  (click)="logout($event)">注销</button>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-row>
+        <ion-col col-9>
+          <ion-avatar item-start>
+            {{username}}
+          </ion-avatar>
+        </ion-col>
+        <ion-col col-3>
+          <button right ion-button small color="dark" (click)="logout($event)">注销</button>
+
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-9>
+          <ion-avatar item-start>
+            {{username}}
+          </ion-avatar>
+        </ion-col>
+        <ion-col col-3>
+          <button right ion-button small color="dark" (click)="logout($event)">注销</button>
+
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
