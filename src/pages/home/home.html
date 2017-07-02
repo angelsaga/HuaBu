@@ -1,50 +1,17 @@
 <ion-header>
   <ion-navbar>
-
     <my-slide (ionSlideTap)="onSlideClick($event)" [slides]="pageSlides" [pageNumber]="4"></my-slide>
-
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
+
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content refreshingSpinner="circles" refreshingText="推荐中" pullingIcon="none"></ion-refresher-content>
+    <ion-refresher-content refreshingSpinner="circles" refreshingText="推荐中" pullingIcon="none">
+    </ion-refresher-content>
   </ion-refresher>
 
-  <ion-list>
-
-    <ion-item *ngFor="let homeActivity of homeActivities" (click)="enterPage($event, homeActivity.id)">
-      <ion-row>
-        <ion-col col-3>
-          <ion-thumbnail>
-            <img src={{homeActivity.thumbnail_pic}}>
-          </ion-thumbnail>
-        </ion-col>
-
-        <ion-col col-9 padding>
-          <ion-row>
-            <ion-col text-wrap>
-              {{homeActivity.title}}
-            </ion-col>
-          </ion-row>
-          <ion-row class="icon-style">
-            <ion-col col-5 text-left>
-              <ion-icon name="heart" *ngIf="homeActivity.liked">
-                {{homeActivity.user_fans_count}}
-              </ion-icon>
-              <ion-icon name="heart-outline" *ngIf="! homeActivity.liked">
-                {{homeActivity.user_fans_count}}
-              </ion-icon>
-            </ion-col>
-            <ion-col col-5 text-right>
-              {{homeActivity.created | date:"yyyy/MM/dd h:mma"}}
-            </ion-col>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-  </ion-list>
+  <my-activities [homeActivities]="homeActivities"></my-activities>
 
 </ion-content>

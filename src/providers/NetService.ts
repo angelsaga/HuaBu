@@ -15,6 +15,8 @@ export class NetService {
     private ACTIVESAVE_URL = this.rest_api_base_url + "/activity/save";
     private ACTIVEDETIAL_URL = this.rest_api_base_url + "/activity/detial";
     private ACTIVEDETIALLIK_URL = this.rest_api_base_url + "/activity/detiallike";
+    private ACTIVELISTBYUSER_URL = this.rest_api_base_url + "/activity/userfanlist";
+    private INFO_URL = this.rest_api_base_url + "/user/info";
 
     // We need to set the content type for the server
     contentHeader = new Headers({"Content-Type": "application/json"});
@@ -70,6 +72,38 @@ export class NetService {
   getActivityDetail(activty) {
     var promise = new Promise((resolve, reject) => {
       this.http_get_with_token(this.ACTIVEDETIAL_URL, activty)
+      .then(
+        (data) => {
+          resolve(data);
+        })
+      .catch(
+        (err) => {
+          reject(err);
+        }
+      )
+    })
+    return promise;  
+  }
+
+  getActivityByUser() {
+    var promise = new Promise((resolve, reject) => {
+      this.http_get_with_token(this.ACTIVELISTBYUSER_URL, null)
+      .then(
+        (data) => {
+          resolve(data);
+        })
+      .catch(
+        (err) => {
+          reject(err);
+        }
+      )
+    })
+    return promise;  
+  }
+
+  getUserinfo() {
+    var promise = new Promise((resolve, reject) => {
+      this.http_get_with_token(this.INFO_URL, null)
       .then(
         (data) => {
           resolve(data);

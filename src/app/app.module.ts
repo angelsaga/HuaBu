@@ -7,15 +7,19 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
-import { SearchPage } from '../pages/home/search';
+import { FanDetailPage } from '../pages/profile/fan_detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from "@angular/http";
 import { ToastService } from "../providers/ToastService";
+import { ActivityService } from "../providers/ActivityService";
 import { IonicStorageModule } from '@ionic/storage';
 import { JwtHelper } from "angular2-jwt";
 import { MySlide } from '../components/my-slide/my-slide';
+import { MyActivities } from '../components/my-activities/my-activities';
+import { ActivityDetailPage } from '../components/my-activities/activity_detail';
+
 import { NetService } from "../providers/NetService";
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
@@ -26,8 +30,10 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     LoginPage,
     ProfilePage,
     TabsPage,
-    SearchPage,
-    MySlide
+    ActivityDetailPage,
+    FanDetailPage,
+    MySlide,
+    MyActivities
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     HomePage,
     LoginPage,
     ProfilePage,
-    SearchPage,
+    ActivityDetailPage,
+    FanDetailPage,
     TabsPage
   ],
   providers: [
@@ -51,6 +58,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     ToastService,
     NetService,
     JwtHelper,
+    ActivityService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

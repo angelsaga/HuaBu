@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { UserInfoService } from "./../../providers/UserInfoService";
 import { LoginPage } from '../login/login';
 import { App } from 'ionic-angular';  
 import { Storage } from "@ionic/storage";
-
+import { FanDetailPage } from "./fan_detail";
+import { NetService } from "../../providers/NetService";
 
 @Component({
   selector: 'page-profile',
@@ -13,9 +14,10 @@ import { Storage } from "@ionic/storage";
 })
 export class ProfilePage {
   public username: String;
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
+  public userinfo;
+  constructor(public navCtrl: NavController,
               private userInfoService: UserInfoService,
+              private netService: NetService,
               public app: App,
               storage: Storage) {
                 this.app = app;
@@ -25,6 +27,17 @@ export class ProfilePage {
                   })
   }
 
+ngOnInit() {
+    this.netService.getUserinfo().then(
+      (data) => {
+        console.log(data);
+        this.userinfo = data[0];
+      }
+    );
+    //this.activityService.saveHomeActivities();
+  }
+
+
   logout(_event) {
     _event.preventDefault();
     this.userInfoService.logout();
@@ -32,7 +45,15 @@ export class ProfilePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    //console.log('ionViewDidLoad ProfilePage');
+  }
+
+  enterFanPage(event, id) {
+    //this.navCtrl.push(SearchPage, {id: id}, { animate: true, animation: 'transition', duration: 500, direction: 'forward' });
+    //console.log(this.app.getRootNav());
+    //this.app.getRootNav().push(SearchPage, { id: id });
+    this.app.getRootNav().push(FanDetailPage, { id: id },
+      { animate: true, animation: 'transition', duration: 600, direction: 'forward' });
   }
 
 }
