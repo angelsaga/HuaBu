@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
-import 'rxjs/add/operator/toPromise';
 
 import { UserInfoService } from "./../../providers/UserInfoService";
 import { emailValidator } from './../../providers/validator'

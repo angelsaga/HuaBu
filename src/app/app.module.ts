@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
 import { FanDetailPage } from '../pages/profile/fan_detail';
+import { ManagementPage } from '../pages/management/management';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,6 +30,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     HomePage,
     LoginPage,
     ProfilePage,
+    ManagementPage,
     TabsPage,
     ActivityDetailPage,
     FanDetailPage,
@@ -50,7 +52,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     ProfilePage,
     ActivityDetailPage,
     FanDetailPage,
-    TabsPage
+    TabsPage,
+    ManagementPage
   ],
   providers: [
     StatusBar,
