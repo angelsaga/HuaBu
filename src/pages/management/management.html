@@ -7,12 +7,30 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>management</ion-title>
+    <ion-title>后台管理</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+      <ion-label color="danger">标题</ion-label>
+      <ion-input color="danger" [(ngModel)]="title" clearOnEdit="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger">作者</ion-label>
+      <ion-input [(ngModel)]="author" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>详细</ion-label>
+      <ion-textarea [(ngModel)]="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+        <ion-label>图片</ion-label>
+        <ion-textarea [(ngModel)]="thumbnail_pic"></ion-textarea>
+      </ion-item>
+  </ion-list>
+ <button ion-button small color="dark" (click)="saveHomeActivity()">发布</button>
 </ion-content>

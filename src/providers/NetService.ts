@@ -8,6 +8,13 @@ import { App } from 'ionic-angular';
 import { LoginPage } from '../pages/login/login';
 import { AppConfig } from '../app/app.config';
 
+export interface Activity{
+  title: String;
+  description: String;
+  thumbnail_pic: String[];
+  author: String;
+}
+
 @Injectable()
 export class NetService {
     private rest_api_base_url = AppConfig.getBaseUrl();
@@ -53,7 +60,7 @@ export class NetService {
     return promise;  
   }
 
-  saveActivity(activty) {
+  saveActivity(activty: Activity) {
     var promise = new Promise((resolve, reject) => {
       this.http_post_with_token(this.ACTIVESAVE_URL, activty)
       .then(
