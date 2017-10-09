@@ -3,8 +3,7 @@ import { HomePage } from '../home/home';
 import { ProfilePage } from '../profile/profile';
 import { ManagementPage } from '../management/management';
 import { Tabs } from 'ionic-angular';
-import { Storage } from "@ionic/storage";
-import { JwtHelper } from "angular2-jwt";
+import { UserInfoService } from "./../../providers/UserInfoService";
 
 @Component({
   selector: 'tabs',
@@ -17,18 +16,10 @@ export class TabsPage {
   tab3Root: any = ManagementPage;
   is_admin: boolean = false;
   constructor(
-    private storage: Storage,
-    private jwtHelper: JwtHelper) {
-    this.isAdmin();
+    private userInfoService: UserInfoService) {
+      userInfoService.isAdmin().then((d) =>{
+        this.is_admin = d;
+      });
   }
-
-  isAdmin(){
-    this.storage.get('token').then((data) => {
-      let token = this.jwtHelper.decodeToken(data);
-      this.is_admin = token.is_admin;
-    });
-  }
-
-
 
 }

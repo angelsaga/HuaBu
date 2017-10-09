@@ -20,6 +20,7 @@ export class NetService {
     private rest_api_base_url = AppConfig.getBaseUrl();
     private ACTIVELIST_URL = this.rest_api_base_url + "/activity/list";
     private ACTIVESAVE_URL = this.rest_api_base_url + "/activity/save";
+    private ACTIVEUPDATE_URL = this.rest_api_base_url + "/activity/update";
     private ACTIVEDETIAL_URL = this.rest_api_base_url + "/activity/detial";
     private ACTIVEDETIALLIK_URL = this.rest_api_base_url + "/activity/detiallike";
     private ACTIVELISTBYUSER_URL = this.rest_api_base_url + "/activity/userfanlist";
@@ -58,6 +59,10 @@ export class NetService {
       )
     })
     return promise;  
+  }
+
+  updateActivity(activty: Activity) {    
+    return this.http_post_with_token(this.ACTIVEUPDATE_URL, activty);  
   }
 
   saveActivity(activty: Activity) {

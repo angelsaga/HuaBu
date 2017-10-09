@@ -21,6 +21,7 @@ export class UserInfoService {
   jwtHelper = new JwtHelper();
   public user: string;
   public loading;
+  public is_admin : boolean;
 
   constructor(private http: Http,
     private storage: Storage,
@@ -30,7 +31,7 @@ export class UserInfoService {
     this.loading = this.loadCtrl.create({
       content: '加载中...',
     });
-  }
+  }  
 
   login(credentials) {
     this.loading.present();
@@ -102,7 +103,9 @@ export class UserInfoService {
   authSuccess(token) {
     this.error = null;
     this.storage.set('token', token).then((any) => {
-      this.user = this.jwtHelper.decodeToken(token).username;
+      let token_dec = this.jwtHelper.decodeToken(token);
+      this.user = token_dec.username;
+      this.is_admin = token_dec.is_admin;
       this.storage.set('username', this.user).then((any) => {
         this.app.getRootNav().setRoot(TabsPage);
         this.loading.dismiss();
@@ -110,6 +113,13 @@ export class UserInfoService {
     });;
 
 
+  }
+
+  isAdmin(){
+      return this.storage.get('token').then((data) => {
+        let token = this.jwtHelper.decodeToken(data);
+        return token.is_admin;
+      });
   }
 
 }

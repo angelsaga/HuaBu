@@ -20,6 +20,7 @@ import { JwtHelper } from "angular2-jwt";
 import { MySlide } from '../components/my-slide/my-slide';
 import { MyActivities } from '../components/my-activities/my-activities';
 import { ActivityDetailPage } from '../components/my-activities/activity_detail';
+import { UserInfoService } from "../providers/UserInfoService";
 
 import { NetService } from "../providers/NetService";
 import { SuperTabsModule } from 'ionic2-super-tabs';
@@ -62,6 +63,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     NetService,
     JwtHelper,
     ActivityService,
+    UserInfoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

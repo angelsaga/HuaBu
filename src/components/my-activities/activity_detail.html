@@ -1,16 +1,19 @@
 <ion-header>
-  <ion-navbar>    
+  <ion-navbar>
     <ion-row padding>
       <ion-col col-9>
       </ion-col>
-      <ion-col col-3 (click)="changeLike()">
-        <ion-icon class="like-icon"  md="md-heart"  *ngIf="ActivitieDetail?.liked">
+      <ion-col col-3>
+        <ion-icon  (click)="changeLike()" class="like-icon" md="md-heart" *ngIf="ActivitieDetail?.liked">
           {{ActivitieDetail?.user_fans_count}}
         </ion-icon>
-        <ion-icon class="like-icon" md="md-heart-outline"  *ngIf="! ActivitieDetail?.liked">
+        <ion-icon  (click)="changeLike()" class="like-icon" md="md-heart-outline" *ngIf="! ActivitieDetail?.liked">
           {{ActivitieDetail?.user_fans_count}}
+        </ion-icon>
+        <ion-icon *ngIf="!is_admin" (click)="enterPage($event)" name="settings" class="customIcon">
         </ion-icon>
       </ion-col>
+      
     </ion-row>
   </ion-navbar>
 </ion-header>
