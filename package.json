@@ -25,22 +25,23 @@
     "@ionic-native/status-bar": "3.12.1",
     "@ionic/storage": "2.0.1",
     "angular2-jwt": "^0.2.3",
-    "cordova-android": "^6.2.3",
     "cordova-browser": "^4.1.0",
     "cordova-ios": "^4.4.0",
-    "cordova-plugin-console": "^1.0.5",
-    "cordova-plugin-device": "^1.1.4",
+    "cordova-plugin-console": "^1.1.0",
+    "cordova-plugin-device": "^1.1.6",
     "cordova-plugin-mipush": "G:\\DOWNLOAD\\new\\ionic\\mipush-cordova-plugin-master",
     "cordova-plugin-splashscreen": "^4.0.3",
-    "cordova-plugin-statusbar": "^2.2.2",
-    "cordova-plugin-whitelist": "^1.3.1",
+    "cordova-plugin-statusbar": "^2.2.3",
+    "cordova-plugin-whitelist": "^1.3.2",
     "ionic-angular": "3.5.0",
     "ionic-plugin-keyboard": "^2.2.1",
     "ionic2-super-tabs": "^2.6.3",
     "ionicons": "3.0.0",
+    "mipush-cordova-plugin": "file:G:\\DOWNLOAD\\new\\ionic\\mipush-cordova-plugin-master",
     "rxjs": "5.4.0",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.12"
+    "zone.js": "0.8.12",
+    "cordova-android": "~6.3.0"
   },
   "devDependencies": {
     "@ionic/app-scripts": "1.3.12",
@@ -66,8 +67,9 @@
       "ionic-plugin-keyboard": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "browser",
+      "android"
     ]
   }
 }
