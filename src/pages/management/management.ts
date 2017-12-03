@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { NetService, Activity } from "../../providers/NetService";
-
+import { HomePage } from '../home/home';
 /**
  * Generated class for the ManagementPage page.
  *
@@ -22,6 +22,7 @@ export class ManagementPage {
   edit_mode: boolean = false;
 
   constructor(
+    private app: App,
     public navCtrl: NavController,
     public navParams: NavParams,
     private netSer: NetService) {
@@ -64,6 +65,7 @@ export class ManagementPage {
       .then(
       (data) => {
         console.log(data);
+        this.app.getRootNav().setRoot(HomePage);
       })
       .catch(
       (err) => {
@@ -85,6 +87,7 @@ export class ManagementPage {
       .then(
       (data) => {console.log(data);
         console.log(data);
+        this.app.getRootNav().setRoot(HomePage);
       })
       .catch(
       (err) => {
